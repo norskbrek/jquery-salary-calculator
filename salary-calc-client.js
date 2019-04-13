@@ -9,6 +9,7 @@ function readyNow() {
     $('#submitButton').on('click', addEmployee);
     $('#deleteButton').on('click', deleteEmployee);
     displayEmployees(employees);
+    calculateMonthlyCosts(employees);
 }
 
 function addEmployee() {
@@ -35,10 +36,8 @@ function addEmployee() {
     employees.push(newEmployee);
     // display employee on DOM
     displayEmployees(employees);
-
     // calculate monthly costs
-    monthlyCosts += Number($('#annualSalaryIn').val());
-
+    calculateMonthlyCosts(employees);
 
     // clear inputs 
     $('#firstNameIn').val('');
@@ -48,6 +47,17 @@ function addEmployee() {
     $('#annualSalaryIn').val('');
 
 } // end addEmployee
+
+function calculateMonthlyCosts(employees) {
+    let annualCosts = 0;
+
+    for ( let i = 0; i < employees.length; i++) {
+        annualCosts = annualCosts + Number(employees[i].annualSalary);
+    }
+
+    monthlyCosts = annualCosts / 12;
+    //return monthlyCosts;
+} // end calculateMonthlyCosts
 
 function deleteEmployee(employees) {
     console.log('in deleteEmployee');
