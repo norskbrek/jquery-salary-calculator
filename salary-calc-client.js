@@ -88,6 +88,10 @@ function displayEmployees(employees) {
         const listItem = `<li>${employees[i].firstName} ${employees[i].lastName}, ${employees[i].id}, ${employees[i].jobTitle}, ${employees[i].annualSalary}</li>`;
         el.append(listItem);
     }
+
+    // for (let i = 0; i < employees.length; i++) {
+    //     const tableItem
+    // }
 }
 
 function displayMonthlyCosts() {
