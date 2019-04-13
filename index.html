@@ -11,22 +11,24 @@
     <link rel="stylesheet" type="text/css" href="styles.css"/>
 </head>
 <body>
+    <div class="jumbotron text-center">
     <h1>SALARY CALCULATOR</h1>
+    </div>
 
     <div>
         <h2>Enter employee information:</h2>
-        <input type="text" placeholder="first name" id="firstNameIn">
-        <input type="text" placeholder="last name" id="lastNameIn">
-        <input type="text" placeholder="employee ID" id="idIn">
-        <input type="text" placeholder="job title" id="jobTitleIn">
-        <input type="text" placeholder="salary" id="annualSalaryIn">
-        <button id="submitButton">Submit</button>
+        <input type="text" class="form-control" placeholder="first name" id="firstNameIn">
+        <input type="text" class="form-control" placeholder="last name" id="lastNameIn">
+        <input type="text" class="form-control" placeholder="employee ID" id="idIn">
+        <input type="text" class="form-control" placeholder="job title" id="jobTitleIn">
+        <input type="text" class="form-control" placeholder="salary" id="annualSalaryIn">
+        <button class="btn btn-success" id="submitButton">Submit</button>
     </div>
 
     <div>
         <h4>Remove Employee</h4>
         <input type="text" placeholder="Enter employee ID" id="removeIdIn">
-        <button id="deleteButton">Remove</button>
+        <button class="btn btn-danger" id="deleteButton">Remove</button>
     </div>
 
     <div id="employeeListDiv">
@@ -34,9 +36,9 @@
         </ul>
     </div>
 
-    <div id="employeeTable">
-        <table class="table">
-            <thead></thead>
+    <div id="employeeTableDiv">
+        <table class="table table-dark">
+            <thead>
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
@@ -46,7 +48,9 @@
                 </tr>
             </thead>
             <tbody>
-                <td id="employeeOut"></td>
+                <tr>
+                    <td id="tableOutput"></td>
+                </tr>
             </tbody>
         </table>
     </div>

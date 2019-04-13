@@ -85,10 +85,20 @@ function displayEmployees(employees) {
     // loop through the inventory
     for (let i = 0; i < employees.length; i++) {
         // display each item as a li: <li>SIZE, COLOR: DESCRIPTION</li>
-        const listItem = `<li>${employees[i].firstName} ${employees[i].lastName}, ${employees[i].id}, ${employees[i].jobTitle}, ${employees[i].annualSalary}</li>`;
+        const listItem = `<li>${employees[i].firstName} ${employees[i].lastName}, 
+            ${employees[i].id}, 
+            ${employees[i].jobTitle}, 
+            ${employees[i].annualSalary}</li>`;
         el.append(listItem);
-    }
 
+        $('#tableOutput').append(`<tr><td>${employees[i].firstName}</td>
+        <td>${employees[i].lastName}</td>
+        <td>${employees[i].id}</td>
+        <td>${employees[i].jobTitle}</td>
+        <td>${employees[i].annualSalary}</td>
+        </tr>`);
+    }
+    
     // for (let i = 0; i < employees.length; i++) {
     //     const tableItem
     // }
