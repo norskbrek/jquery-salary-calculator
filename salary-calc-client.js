@@ -97,6 +97,7 @@ function displayEmployees(employees) {
         <td>${employees[i].jobTitle}</td>
         <td>${employees[i].annualSalary}</td>
         </tr>`);
+        
     }
     
     // for (let i = 0; i < employees.length; i++) {
