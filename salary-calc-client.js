@@ -28,6 +28,14 @@ function addEmployee() {
     employees.push(newEmployee);
     // display employee on DOM
     displayEmployees(employees);
+
+    // clear inputs 
+    $('#firstNameIn').val('');
+    $('#lastNameIn').val('');
+    $('#idIn').val('');
+    $('#jobTitleIn').val('');
+    $('#annualSalaryIn').val('');
+
 } // end addEmployee
 
 function deleteEmployee() {
