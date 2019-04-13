@@ -1,6 +1,6 @@
 // initialize employee array @ empty
 let employees = [];
-monthlyCosts = 0;
+let monthlyCosts = 0;
 
 $(document).ready(readyNow);
 
@@ -31,8 +31,8 @@ function addEmployee() {
     displayEmployees(employees);
 
     // calculate monthly costs
-    monthlyCosts += $('#annualSalaryIn');
-    // console.log(monthlyCosts);
+    monthlyCosts += Number($('#annualSalaryIn').val());
+
 
     // clear inputs 
     $('#firstNameIn').val('');
@@ -43,11 +43,20 @@ function addEmployee() {
 
 } // end addEmployee
 
-function deleteEmployee() {
+function deleteEmployee(employees) {
     console.log('in deleteEmployee');
     
-    let idOut = $('#idIn');
-
+    let removeId = $('#idIn');
+    let el = $('#employeeOut');
+    el.empty();
+    // loop through employees
+    for (let i = 0; i < employees.length; i++) {
+        if (employees[i].id === removeId) {
+            el.empty();
+        }
+    }
+    
+    
     
 }
 
