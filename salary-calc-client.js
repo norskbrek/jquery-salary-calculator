@@ -1,5 +1,6 @@
 // initialize employee array @ empty
 let employees = [];
+monthlyCosts = 0;
 
 $(document).ready(readyNow);
 
@@ -17,17 +18,21 @@ function addEmployee() {
     const newEmployee = {
         firstName: $('#firstNameIn').val(),
         lastName: $('#lastNameIn').val(),
-        iD: $('#idIn').val(),
+        id: $('#idIn').val(),
         position: $('#jobTitleIn').val(),
         annualSalary: $('#annualSalaryIn').val(),
         // monthly salary?
         // monthlySalary: (this.annualSalary / 12).val()
-    } // end newEmployee
+    } 
 
     // push object into employee array
     employees.push(newEmployee);
     // display employee on DOM
     displayEmployees(employees);
+
+    // calculate monthly costs
+    monthlyCosts += $('#annualSalaryIn');
+    // console.log(monthlyCosts);
 
     // clear inputs 
     $('#firstNameIn').val('');
@@ -41,8 +46,23 @@ function addEmployee() {
 function deleteEmployee() {
     console.log('in deleteEmployee');
     
+    let idOut = $('#idIn');
+
+    
 }
 
-function displayEmployees() {
-
+function displayEmployees(employees) {
+    console.log('in displayEmployees');
+    // target ul element
+    let el = $('#employeeOut');
+    el.empty();
+    // loop through the inventory
+    for (let i = 0; i < employees.length; i++) {
+        // display each item as a li: <li>SIZE, COLOR: DESCRIPTION</li>
+        const listItem = `<li>${employees[i].firstName} ${employees[i].lastName},
+            ${employees[i].id}, 
+            ${employees[i].jobTitle},
+            ${employees[i].annualSalary}</li>`;
+        el.append(listItem);
+    }
 }
