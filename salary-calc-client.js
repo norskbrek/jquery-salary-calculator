@@ -13,13 +13,19 @@ function readyNow() {
 
 function addEmployee() {
     console.log('in addEmployee');
+    console.log("Who's the man now, dog?");
+    console.log('----------------------');
+    console.log('I am! Yay! :)');
+    
+    
+    
     // user input
     // new object literal
     const newEmployee = {
         firstName: $('#firstNameIn').val(),
         lastName: $('#lastNameIn').val(),
         id: $('#idIn').val(),
-        position: $('#jobTitleIn').val(),
+        jobTitle: $('#jobTitleIn').val(),
         annualSalary: $('#annualSalaryIn').val(),
         // monthly salary?
         // monthlySalary: (this.annualSalary / 12).val()
