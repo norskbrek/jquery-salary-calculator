@@ -1,7 +1,7 @@
 // initialize employee array @ empty
 let employees = [
-    {firstName: 'andy', lastName: 'roll', id: '123', jobTitle: 'baker', annualSalary: 144000},
-    {firstName: 'paul', lastName: 'john', id: '456', jobTitle: 'cook', annualSalary: 288000}
+    // {firstName: 'andy', lastName: 'roll', id: '123', jobTitle: 'baker', annualSalary: 144000},
+    // {firstName: 'paul', lastName: 'john', id: '456', jobTitle: 'cook', annualSalary: 288000}
 ];
 let monthlyCosts = 0;
 
@@ -25,11 +25,12 @@ function addEmployee() {
         jobTitle: $('#jobTitleIn').val(),
         annualSalary: $('#annualSalaryIn').val(),
     } 
-
     // push object into employee array
     employees.push(newEmployee);
+    
     // display employee on DOM
     displayEmployees(employees);
+    
     // calculate monthly costs
     calculateMonthlyCosts(employees);
 
@@ -59,14 +60,15 @@ function calculateMonthlyCosts(employees) {
 
 function deleteEmployee(employees) {
     console.log('in deleteEmployee');
+
+    let el = $('#removeIdIn').val();
+    console.log(el);
     
-    let removeId = employees.map(function (employee) {
-        return employee.id;
-    }).indexOf($('#removeIdIn'));
+    // let removeId = employees.map(employees.id === $('#removeIdIn'));
 
-    employees.splice(removeId, 1);
+    // employees.splice(removeId, 1);
 
-    console.log('removeId:', removeId);
+    // console.log('removeId:', removeId);
     
     // loop through employees
     // if current employee object's id matches
@@ -78,12 +80,15 @@ function deleteEmployee(employees) {
     //     }
     //     return employees;
     // }
+
+    employees = employees.filter(function (obj) {
+        return obj.id !== el;
+    })
+
     displayEmployees(employees);
 }
 
 function displayEmployees(employees) {
-    console.log('in displayEmployees');
-
     // --- OLD FUNCTION --- EMPLOYEE LIST
     // target ul element
     let el = $('#employeeOut');
@@ -115,14 +120,12 @@ function displayEmployees(employees) {
 } // end displayEmployees
 
 function displayMonthlyCosts() {
-    console.log('in displayMonthlyCosts');
-
     let el = $('#monthlyCostsOut');
     el.empty();
     el.append(`Monthly Costs: $${monthlyCosts}`);
 
     if (monthlyCosts > 20000) {
-        $('#footer').addClass('overBudget');
+        $('#monthlyCostsOut').css('background-color', 'red');
     }
 
 } // end displayMonthlyCosts
