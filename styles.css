@@ -1,6 +1,13 @@
-header {
- background: url(celery-man.jpg)  center no-repeat;
- background-size: cover;
+.jumbotron {
+    text-align: center;
+    text-shadow: 2px 2px black;
+    font-family: 'Comic Sans MS', Courier, sans-serif;
+    color: white;
+    background: url(celery-man.jpg)  center no-repeat
+}
+
+h2 {
+    font-size: 25px;
 }
 
 .form-control {
@@ -9,24 +16,8 @@ header {
     padding: 5px
 }
 
-#employeeListDiv {
-    margin-top: 10px
-}
-
-ul {
-    font-size: 20px
-}
-
-li {
-    padding: 5px
-}
-
 #deleteButton {
-    float: right
-}
-
-#monthlyCostsDiv {
-    margin-right: 5px
+    float: center
 }
 
 .overBudget {
@@ -34,5 +25,6 @@ li {
 }
 
 #monthlyCostsDiv {
-    float: right
+    float: right;
+    margin-right: 5px
 }

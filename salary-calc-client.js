@@ -17,7 +17,7 @@ function readyNow() {
     $('#submitButton').on('click', addEmployee);
     // set monthly costs @ 0
     calculateMonthlyCosts(employees);
-}
+} // end readyNow
 
 function addEmployee() {
     console.log('In addEmployee:');
@@ -75,7 +75,7 @@ function displayEmployees() {
             <td>${tableItem.id}</td>
             <td>${tableItem.jobTitle}</td>
             <td>${tableItem.annualSalary}</td>
-            <td><button id="deleteButton">Delete</button></td>
+            <td><button class="btn btn-danger" id="deleteButton">Delete</button></td>
         </tr>`);
 
     // delete button tester
