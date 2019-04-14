@@ -11,49 +11,40 @@
     <link rel="stylesheet" type="text/css" href="styles.css"/>
 </head>
 <body>
-    <div class="container">
-        <header class="jumbotron">
-            <h1>SALARY CALCULATOR</h1>
-        </header>
+    <header class="jumbotron">
+        <h1>SALARY CALCULATOR</h1>
+    </header>
+
+    <div id="employeeInputs">
+            <h2>Enter employee information:</h2>
+            <input type="text" class="form-control" placeholder="first name" id="firstNameIn">
+            <input type="text" class="form-control" placeholder="last name" id="lastNameIn">
+            <input type="text" class="form-control" placeholder="employee ID" id="idIn">
+            <input type="text" class="form-control" placeholder="job title" id="jobTitleIn">
+            <input type="text" class="form-control" placeholder="annual salary" id="annualSalaryIn">
+            <button type="button" class="btn btn-success form-control" id="submitButton">Submit</button>
     </div>
 
-    <div class="container">
-        <div id="employeeInputs">
-                <h2>Enter employee information:</h2>
-                <input type="text" class="form-control" placeholder="first name" id="firstNameIn">
-                <input type="text" class="form-control" placeholder="last name" id="lastNameIn">
-                <input type="text" class="form-control" placeholder="employee ID" id="idIn">
-                <input type="text" class="form-control" placeholder="job title" id="jobTitleIn">
-                <input type="text" class="form-control" placeholder="annual salary" id="annualSalaryIn">
-                <button type="button" class="btn btn-success form-control" id="submitButton">Submit</button>
-        </div>
+
+    <table class="table" id="employeeTable">
+        <thead class="thead-dark">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ID</th>
+                <th>Job Title</th>
+                <th>Annual Salary</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody id="tableBody">
+            <tr></tr>
+        </tbody>
+    </table>
+
+    <div id="monthlyCostsDiv">
+        <h2 id="monthlyCostsOut"></h2>
     </div>
-
-    <div class="container">
-        <table class="table" id="employeeTable">
-            <thead class="thead-dark" id="tableHead">
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Annual Salary</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-
-            <tbody id="tableBody">
-                <tr></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="container">
-        <div id="monthlyCostsDiv">
-            <h2 id="monthlyCostsOut"></h2>
-        </div>
-    </div>
-</div>
-
 </body>
 </html>
