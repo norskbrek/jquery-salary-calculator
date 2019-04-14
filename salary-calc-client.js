@@ -1,11 +1,6 @@
 // initialize employee array
 // initialize monthlyCosts
-let employees = [
-    // {firstName: 'Derek', lastName: 'Chunsler', id: '123', jobTitle: 'Baker', annualSalary: 14400},
-    // {firstName: 'Brenda', lastName: 'Lipsley', id: '456', jobTitle: 'Cook', annualSalary: 24000},
-    // {firstName: 'Zaphyre', lastName: 'McPripps', id: '789', jobTitle: 'Soup&ccedilon', annualSalary: 36000}
-
-];
+let employees = [];
 let monthlyCosts = 0;
 
 $(document).ready(readyNow);
@@ -77,27 +72,6 @@ function displayEmployees() {
             <td>${tableItem.annualSalary}</td>
             <td><button class="btn btn-danger" id="deleteButton">Delete</button></td>
         </tr>`);
-
-    // delete button tester
-    // --> set employees array to commented items
-    // --> add displayEmployees(employees) to readyNow();
-    // --> comment out above function ^^^
-    // --> then test if button works
-
-    // for (i = 0; i < employees.length; i++) {
-    //     let tableItem = employees[i];
-
-    //     $('#tableBody').append(`
-    //     <tr>
-    //         <td>${tableItem.firstName}</td>
-    //         <td>${tableItem.lastName}</td>
-    //         <td>${tableItem.id}</td>
-    //         <td>${tableItem.jobTitle}</td>
-    //         <td>${tableItem.annualSalary}</td>
-    //         <td><button id="deleteButton">Delete</button></td>
-    //     </tr>`);
-
-    // }
 
     // activate delete button within each table item
     $('#tableBody').on('click', '#deleteButton', deleteEmployee);  
