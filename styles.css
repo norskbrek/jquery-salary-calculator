@@ -1,8 +1,17 @@
-/* .jumbotron {
+.jumbotron {
  background: url(celery-man.jpg)  center no-repeat;
  background-size: cover;
-} */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse
+}
 
 ul {
     font-size: 40px
+}
+
+.overBudget {
+    background: red
 }

@@ -57,24 +57,28 @@ function calculateMonthlyCosts(employees) {
 
 } // end calculateMonthlyCosts
 
-function deleteEmployee() {
+function deleteEmployee(employees) {
     console.log('in deleteEmployee');
     
-    let removeId = $('#removeIdIn').val();
-    console.log('removeId', removeId);
+    let removeId = employees.map(function (employee) {
+        return employee.id;
+    }).indexOf($('#removeIdIn'));
+
+    employees.splice(removeId, 1);
+
+    console.log('removeId:', removeId);
     
     // loop through employees
     // if current employee object's id matches
     // then remove employee at index
-    for (let i = 0; i < employees.length; i++) {
-        if (employees[i].id === $('#removeIdIn')) {
-            employees.slice(i, 1);
+    // for (let i = 0; i < employees.length; i++) {
+    //     if (employees[i].id === removeId) {
+    //         employees[i].splice(i, 1);
         
-        }
-    }
+    //     }
+    //     return employees;
+    // }
     displayEmployees(employees);
-
-    $('#removeIdIn').val('');
 }
 
 function displayEmployees(employees) {
@@ -82,37 +86,43 @@ function displayEmployees(employees) {
 
     // --- OLD FUNCTION --- EMPLOYEE LIST
     // target ul element
-    // let el = $('#employeeOut');
-    // el.empty();
-    // loop through the inventory
-    // for (let i = 0; i < employees.length; i++) {
-        // display each item as a li: 
-        // const listItem = `<li>${employees[i].firstName} ${employees[i].lastName}, 
-        //     ${employees[i].id}, 
-        //     ${employees[i].jobTitle}, 
-        //     ${employees[i].annualSalary}</li>`;
-        // el.append(listItem);
-
-    let el = $('#tableOutput');
+    let el = $('#employeeOut');
     el.empty();
-        
+    // loop through the employees
     for (let i = 0; i < employees.length; i++) {
-        const tableItem = `<tr><td>${employees[i].firstName}</td>
-            <td>${employees[i].lastName}</td>
-            <td>${employees[i].id}</td>
-            <td>${employees[i].jobTitle}</td>
-            <td>${employees[i].annualSalary}</td>
-        </tr>`;
+        // display each item as a li: 
+        const listItem = `<li>${employees[i].firstName} ${employees[i].lastName}, 
+            ${employees[i].id}, 
+            ${employees[i].jobTitle}, 
+            ${employees[i].annualSalary}</li>`;
+        
+            el.append(listItem);
 
-        el.append(tableItem);
+    // let el = $('#tableOutput');
+    // el.empty();
+
+    // for (let i = 0; i < employees.length; i++) {
+    //     const tableItem = `<tr><td>${employees[i].firstName}</td>
+    //         <td>${employees[i].lastName}</td>
+    //         <td>${employees[i].id}</td>
+    //         <td>${employees[i].jobTitle}</td>
+    //         <td>${employees[i].annualSalary}</td>
+    //     </tr>`;
+
+    //     el.append(tableItem);
 
     }
-    
-    // for (let i = 0; i < employees.length; i++) {
-    //     const tableItem
-    // }
-}
+} // end displayEmployees
 
 function displayMonthlyCosts() {
+    console.log('in displayMonthlyCosts');
 
-}
+    let el = $('#monthlyCostsOut');
+    el.empty();
+    el.append(`Monthly Costs: $${monthlyCosts}`);
+
+    if (monthlyCosts > 20000) {
+        $('#footer').addClass('overBudget');
+    }
+
+} // end displayMonthlyCosts
