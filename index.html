@@ -7,22 +7,23 @@
     <title>Celery Calculator</title>
     <script src="jquery-3.4.0.js"></script>
     <script src="salary-calc-client.js"></script>
-    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="styles.css"/>
 </head>
 <body>
-    <div class="jumbotron text-center">
-    <h1>SALARY CALCULATOR</h1>
+    <div>
+        <header>
+            <h1>SALARY CALCULATOR</h1>
+        </header>
     </div>
 
-    <div>
-        <h2>Enter employee information:</h2>
-        <input type="text" class="form-control" placeholder="first name" id="firstNameIn">
-        <input type="text" class="form-control" placeholder="last name" id="lastNameIn">
-        <input type="text" class="form-control" placeholder="employee ID" id="idIn">
-        <input type="text" class="form-control" placeholder="job title" id="jobTitleIn">
-        <input type="text" class="form-control" placeholder="annual salary" id="annualSalaryIn">
-        <button class="btn btn-success" id="submitButton">Submit</button>
+    <div id="employeeInputs">
+            <h2>Enter employee information:</h2>
+            <input type="text" placeholder="first name" id="firstNameIn">
+            <input type="text" placeholder="last name" id="lastNameIn">
+            <input type="text" placeholder="employee ID" id="idIn">
+            <input type="text" placeholder="job title" id="jobTitleIn">
+            <input type="text" placeholder="annual salary" id="annualSalaryIn">
+            <button type="button" id="submitButton">Submit</button>
     </div>
 
     <!-- <div>
@@ -32,15 +33,14 @@
     </div> -->
 
     <!-- employeeList test div -->
-    <div id="employeeListDiv">
+    <!-- <div id="employeeListDiv">
         <ul id="employeeOut">
         </ul>
-    </div>
+    </div> -->
 
-    <!-- <div id="employeeTableDiv">
-        <table class="table table-sm">
-            <tbody>
-            <thead class="thead-dark">
+    <div>
+        <table id="employeeTable">
+            <thead id="tableHead">
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
@@ -49,20 +49,16 @@
                     <th>Annual Salary</th>
                 </tr>
             </thead>
-                <tr id="newEmployeeOut">
-                    <td id="firstNameOut"></td>
-                    <td id="lastNameOut"></td>
-                    <td id="idOut"></td>
-                    <td id="jobTitleOut"></td>
-                    <td id="annualSalaryOut"></td>
-                </tr>
+
+            <tbody id="tableBody">
+                <tr></tr>
             </tbody>
         </table>
-    </div> -->
+    </div>
 
     <div id="footer"></div>
         <div id="monthlyCostsDiv">
-            <h2 class="float-right" id="monthlyCostsOut"></h2>
+            <h2 id="monthlyCostsOut"></h2>
         </div>
     </div>
 

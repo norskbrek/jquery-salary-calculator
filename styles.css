@@ -1,4 +1,4 @@
-.jumbotron {
+header {
  background: url(celery-man.jpg)  center no-repeat;
  background-size: cover;
 }
@@ -21,7 +21,7 @@ li {
     padding: 5px
 }
 
-.deleteButton {
+#deleteButton {
     float: right
 }
 
@@ -31,4 +31,8 @@ li {
 
 .overBudget {
     background: red;
+}
+
+#monthlyCostsDiv {
+    float: right
 }
