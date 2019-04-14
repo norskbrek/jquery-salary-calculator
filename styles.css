@@ -21,11 +21,11 @@ h2 {
     float: center
 }
 
-.overBudget {
-    background: red;
-}
-
 #monthlyCostsDiv {
     float: right;
     margin-right: 5px
+}
+
+.overBudget {
+    background: red;
 }
