@@ -3,13 +3,17 @@
  background-size: cover;
 }
 
+input {
+    width: 50%
+}
+
 .table {
     width: 100%;
     border-collapse: collapse
 }
 
 ul {
-    font-size: 40px
+    font-size: 20px
 }
 
 .overBudget {

@@ -51,7 +51,7 @@ function calculateMonthlyCosts(employees) {
     }
 
     // set new monthlyCosts
-    monthlyCosts = annualCosts / 12;
+    monthlyCosts = (annualCosts / 12).toFixed(2);
 
     // display on DOM
     displayMonthlyCosts();
@@ -89,6 +89,7 @@ function deleteEmployee(employees) {
 }
 
 function displayEmployees(employees) {
+
     // --- OLD FUNCTION --- EMPLOYEE LIST
     // target ul element
     let el = $('#employeeOut');
