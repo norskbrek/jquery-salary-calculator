@@ -1,7 +1,8 @@
 // initialize employee array @ empty
 let employees = [
-    // {firstName: 'andy', lastName: 'roll', id: '123', jobTitle: 'baker', annualSalary: 144000},
-    // {firstName: 'paul', lastName: 'john', id: '456', jobTitle: 'cook', annualSalary: 288000}
+    {firstName: 'Derek', lastName: 'Chunsler', id: '123', jobTitle: 'Baker', annualSalary: 14400},
+    {firstName: 'Brenda', lastName: 'Lipsley', id: '456', jobTitle: 'Cook', annualSalary: 24000},
+    { firstName: 'Zaphyre', lastName: 'McPripps', id: '789', jobTitle: 'Soup&ccedilon', annualSalary: 36000}
 ];
 let monthlyCosts = 0;
 
@@ -10,12 +11,15 @@ $(document).ready(readyNow);
 // readyNow function (at top; other functions - alphabetical)
 function readyNow() {
     $('#submitButton').on('click', addEmployee);
-    $('#deleteButton').on('click', deleteEmployee);
+    $('.deleteButton').on('click', deleteEmployee);
+        
     displayEmployees(employees);
     calculateMonthlyCosts(employees);
 }
 
 function addEmployee() {
+    console.log('In addEmployee:');
+    
     // user input
     // new object literal
     const newEmployee = {
@@ -58,14 +62,11 @@ function calculateMonthlyCosts(employees) {
 
 } // end calculateMonthlyCosts
 
-function deleteEmployee(employees) {
-    console.log('in deleteEmployee');
-
-    let el = $('#removeIdIn').val();
-    console.log(el);
+function deleteEmployee() {
     
-    // let removeId = employees.map(employees.id === $('#removeIdIn'));
+    console.log('In deleteEmployee:');
 
+    // let removeId = employees.map(employees.id === $('#removeIdIn'));
     // employees.splice(removeId, 1);
 
     // console.log('removeId:', removeId);
@@ -81,12 +82,8 @@ function deleteEmployee(employees) {
     //     return employees;
     // }
 
-    employees = employees.filter(function (obj) {
-        return obj.id !== el;
-    })
-
-    displayEmployees(employees);
-}
+    // displayEmployees(employees);
+} // end deleteEmployee
 
 function displayEmployees(employees) {
 
@@ -97,14 +94,15 @@ function displayEmployees(employees) {
     // loop through the employees
     for (let i = 0; i < employees.length; i++) {
         // display each item as a li: 
-        const listItem = `<li>${employees[i].firstName} ${employees[i].lastName}, 
-            ${employees[i].id}, 
-            ${employees[i].jobTitle}, 
-            ${employees[i].annualSalary}</li>`;
+        const listItem = `<li><b>Name:</b> ${employees[i].firstName} ${employees[i].lastName} 
+            <b>ID:</b> ${employees[i].id} 
+            <b>Title:</b> ${employees[i].jobTitle} 
+            <b>Annual Salary:</b> ${employees[i].annualSalary}
+            <button class="btn btn-danger deleteButton">Remove</button></li>`;
         
             el.append(listItem);
-
-    // let el = $('#tableOutput');
+    }
+    // let el = $('#employeeOut');
     // el.empty();
 
     // for (let i = 0; i < employees.length; i++) {
@@ -115,9 +113,7 @@ function displayEmployees(employees) {
     //         <td>${employees[i].annualSalary}</td>
     //     </tr>`;
 
-    //     el.append(tableItem);
-
-    }
+    // }
 } // end displayEmployees
 
 function displayMonthlyCosts() {

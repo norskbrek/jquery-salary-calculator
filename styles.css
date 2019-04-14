@@ -3,19 +3,32 @@
  background-size: cover;
 }
 
-input {
-    width: 50%
+.form-control {
+    width: 50%;
+    margin: 7px;
+    padding: 5px
 }
 
-.table {
-    width: 100%;
-    border-collapse: collapse
+#employeeListDiv {
+    margin-top: 10px
 }
 
 ul {
     font-size: 20px
 }
 
+li {
+    padding: 5px
+}
+
+.deleteButton {
+    float: right
+}
+
+#monthlyCostsDiv {
+    margin-right: 5px
+}
+
 .overBudget {
-    background: red
+    background: red;
 }
